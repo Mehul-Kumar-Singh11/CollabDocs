@@ -1,8 +1,5 @@
 'use client'
 
-import { Separator } from "@/components/ui/separator";
-import { cn } from "@/lib/utils";
-import { useEditorStore } from "@/store/use-editor-store";
 import {
     BoldIcon,
     ItalicIcon,
@@ -17,6 +14,11 @@ import {
     UnderlineIcon,
     Undo2Icon
 } from "lucide-react";
+
+import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
+import { useEditorStore } from "@/store/use-editor-store";
+import { AlignButton, FontFamilyButton, HeadingLevelButton, HighlightColorButton, ImageButton, LinkButton, ListButton, TextColorButton } from "./customComponents";
 
 interface ToolbarButtonProps {
     onClick?: () => void;
@@ -131,9 +133,9 @@ export const Toolbar = () => {
                 ))
             }
             <Separator orientation="vertical" className="h-6 bg-neutral-300" />
-            {  /* TODO: Font Family */}
+            <FontFamilyButton />
             <Separator orientation="vertical" className="h-6 bg-neutral-300" />
-            {  /* TODO: Heading */}
+            <HeadingLevelButton />
             <Separator orientation="vertical" className="h-6 bg-neutral-300" />
             {  /* TODO: Font Size */}
             <Separator orientation="vertical" className="h-6 bg-neutral-300" />
@@ -142,14 +144,14 @@ export const Toolbar = () => {
                     <ToolbarButton key={item.label} {...item} />
                 ))
             }
-            {  /* TODO: Text Color */}
-            {  /* TODO: Highlight Color*/}
+            <TextColorButton />
+            <HighlightColorButton />
             <Separator orientation="vertical" className="h-6 bg-neutral-300" />
-            {  /* TODO: Link */}
-            {  /* TODO: Image */}
-            {  /* TODO: Align */}
+            <LinkButton />
+            <ImageButton />
+            <AlignButton />
             {  /* TODO: Line Height */}
-            {  /* TODO: List */}
+            <ListButton />
             {
                 sections[2].map((item) => (
                     <ToolbarButton key={item.label} {...item} />
