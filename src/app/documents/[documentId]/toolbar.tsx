@@ -18,7 +18,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { useEditorStore } from "@/store/use-editor-store";
-import { AlignButton, FontFamilyButton, HeadingLevelButton, HighlightColorButton, ImageButton, LinkButton, ListButton, TextColorButton } from "./customComponents";
+import { AlignButton, FontFamilyButton, FontSizeButton, HeadingLevelButton, HighlightColorButton, ImageButton, LinkButton, ListButton, TextColorButton } from "./customComponents";
 
 interface ToolbarButtonProps {
     onClick?: () => void;
@@ -138,6 +138,7 @@ export const Toolbar = () => {
             <HeadingLevelButton />
             <Separator orientation="vertical" className="h-6 bg-neutral-300" />
             {  /* TODO: Font Size */}
+            <FontSizeButton />
             <Separator orientation="vertical" className="h-6 bg-neutral-300" />
             {
                 sections[1].map((item) => (
